@@ -3,7 +3,7 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-enterprise";
 import { GridOptions } from "ag-grid-community/dist/lib/entities/gridOptions"
 import { ColDef } from "ag-grid-community/dist/lib/entities/colDef"
-import { getPlayersNames, parsePlayersNames, parseLocale } from '../const';
+import { getMyClubPlayers } from '../const';
 
 const defaultColDef: ColDef = {
     editable: true,
@@ -57,16 +57,10 @@ const gridOptions: GridOptions = {
 }
 
 export default function Table() {
-    // const pMeta = getPlayersNames(playersMeta);
-    // const parsdPlayers = parsePlayersNames(players, pMeta);
-    // parseLocale(locale);
-
-    
-    // rowData={parsdPlayers}
     return (
         <AgGridReact
             gridOptions={gridOptions}
-            rowData={[]}
+            rowData={getMyClubPlayers()}
         />
     );
 }
